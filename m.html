@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notice Board</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .notice-table {
+            margin: 20px auto;
+            width: 80%;
+            border-collapse: collapse;
+        }
+
+        .notice-table th, .notice-table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .notice-table th {
+            background-color: #ffcc00;
+            font-weight: bold;
+        }
+
+        .notice-table tr:nth-child(even) {
+            background-color: #fff;
+        }
+
+        .notice-table tr:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+        .Back {
+            text-align: left;
+            padding: 20px;
+        }
+
+        .back-button {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Notice Board</h1>
+    </div>
+</div>
+<div class="Back">
+   
+    <button class="back-button" onclick="goBack()">&#8592;</button>
+</div> 
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+
+    <table class="notice-table">
+        <tr>
+            <th>Date</th>
+            <th>Notice</th>
+            <th>Download</th>
+        </tr>
+        <tr>
+            <td>10-07-2023</td>
+            <td>Class 11th result declared</td>
+            <td><a href="https://www.jkbose.org.in/wp-content/uploads/2023/07/JKBOSE-11th-Jammu-Division-Result-2023.pdf">Download</a>
+            </td>
+        </tr>
+        <tr>
+            <td>19-06-2023</td>
+            <td>Class 10th result declared</td>
+            <td><a href="https://www.jkyouth.com/wp-content/uploads/2023/06/Final_Guz_Volume-1.pdf">Download</a>
+            </td>
+        </tr>
+        <tr>
+            <td>09-06-2023</td>
+            <td>Class 12th result Declared</td>
+            <td><a href="https://jkbose.nic.in/pdf/GazzetteeVol2dt09.06.23.pdf">Download</a>
+            </td>
+        </tr>
+        <tr>
+            <td>10-02-2023</td>
+            <td>Class 11th Datesheet</td>
+            <td><a href="https://jkbose.nic.in/pdf/11thdatesheetAR23.pdf">Download</a>
+            </td>
+        </tr>
+        <tr>
+            <td>10-02-2023</td>
+            <td>Class 12th Datesheet</td>
+            <td><a href="https://jkbose.nic.in/pdf/12thdatesheetAR23.pdf">Download</a>
+            </td>
+        </tr>
+        <tr>
+            <td>10-02-2023</td>
+            <td>Class 10th Datesheet</td>
+            <td><a href="https://jkbose.nic.in/pdf/10thDatesheetAR2023.pdf">Download</a>
+            </td>
+        </tr>
+       
+
+    </table>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 10px;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        nav {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        .section {
+            
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #f9f7f7;
+            border-radius: 5px;
+        }
+        .blue-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-image: url("https://c1.wallpaperflare.com/preview/289/102/403/various-book-books-college.jpg");
+            color: #fff; /* Text color */
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .blue-button:hover {
+            background-color: #1a83f3; /* Darker blue color on hover */
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #110000;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(8, 0, 0, 0.943);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-item {
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-item:hover {
+            background-color: #413edc;
+        }
+        .Mode {
+            float: right;
+        }
+        /* Light mode styles */
+        .light-mode {
+            background-color: #ffffff;
+            color: #333333;
+        }
+
+        /* Dark mode styles */
+        .dark-mode {
+            background-color: #111010;
+            color: #fdf7f7;
+        }
+        .Back {
+            text-align: left;
+            padding: 20px;
+        }
+
+        .back-button {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 20px;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #d2cfcf;
+        }
+
+        th {
+            background-color: #7d89f4;
+        }
+        
+    </style>
+    <script>
+        // Check the user's preference for light or dark mode
+        const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        // Apply the appropriate mode based on user preference
+        function applyMode() {
+            const body = document.body;
+            body.classList.toggle("dark-mode", prefersDarkMode);
+            body.classList.toggle("light-mode", !prefersDarkMode);
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            applyMode();
+        });
+
+        // Toggle between light and dark modes
+        function toggleMode() {
+            const body = document.body;
+            body.classList.toggle("dark-mode");
+            body.classList.toggle("light-mode");
+        }
+    </script>
+</head>
+<body>
+    
+    <nav>
+        <a href="A.html">Home</a>
+          
+        <div class="dropdown">
+            <span>About Us</span>
+            <div class="dropdown-content">
+              <a href="B.html" class="dropdown-item">About us</a>
+              <a href="C.html" class="dropdown-item">Vision</a>
+               </div>
+            </div>
+        
+        
+        <a href="D.html">Gallery</a>
+        <div class="dropdown">
+            <span>Result</span>
+            <div class="dropdown-content">
+                <a href="https://jkbose.nic.in/pdf/GazzetteeVol2dt09.06.23.pdf" class="dropdown-item">Class 12th</a>
+                <a href="https://www.jkbose.org.in/wp-content/uploads/2023/07/JKBOSE-11th-Jammu-Division-Result-2023.pdf" class="dropdown-item">Class 11th</a>
+                <a href="https://www.jkyouth.com/wp-content/uploads/2023/06/Final_Guz_Volume-1.pdf" class="dropdown-item">Class 10th</a>
+
+               </div>
+            </div>
+       
+        
+        <a href="https://www.google.com/maps/place/Higher+secondary+school+kharah/@32.902781,74.5234143,15.76z/data=!4m6!3m5!1s0x391e5ffe2c94a72d:0xe50e6629aed92934!8m2!3d32.9027663!4d74.5230639!16s%2Fg%2F11t6lk7nlt?entry=ttu">Location</a>
+        <div class="dropdown">
+            <span>Whatsapp</span>
+            <div class="dropdown-content">
+                <a href="https://chat.whatsapp.com/B5VDEbHfENc3XCKk4t1i7L" class="dropdown-item">Cultural Activity Group</a>
+
+               
+            </div>
+            <a></a>
+            </div>
+            
+                <a href="https://www.facebook.com/p/Govt-Higher-Secondary-School-Kharah-100064022775283/">  <img src="http://stfrancisakhnoor.org/images/fb.png" alt="Facebook Logo"></a>
+       
+                <a href="E.html">QUERY</a>
+                <div class="Mode">
+                <button onclick="toggleMode()">Change Mode  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAKpJREFUOE+l0zEOAUEYxfHfXkRE6wJal9Bq3IGIC6jVDqCkEJ1bKBEXISM7yURmM7v2a6aZ93/fe5mp9Jyqp14XwBBnnLCKxl0AB8xq4TZC2gCC8wZrHDHBDeMAKwGC+IpwXjDHDks8S4BUHCPvsUiLb9pgUDuPkssvTHEvAVqLcxE6iX8BncW/gEfddowYWg6Zv203TVriu1RYDpIDZNtus8Ff/6r0EovQD1quIhHsbggjAAAAAElFTkSuQmCC" alt=""></button>
+            </div>
+    </nav>
+    <div class="Back">
+       
+        <button class="back-button" onclick="goBack()">&#8592;</button>
+    </div> 
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+    <div class="blue-button"><h2> Government Higher Secondary School KHARAH</h2></div>   
+    <div class="section"><h1>About HSS KHARAH</h1> 
+        <h3>HSS KHARAH was established in 1953 and it is managed by the Department of Education. It is located in Rural area. It is located in KHOUR block of JAMMU district of Jammu and Kashmir. The school consists of Grades from 6 to 12. The school is Co-educational and it doesn't have an attached pre-primary section. The school is Not Applicable in nature and is not using school building as a shift-school. English is the medium of instructions in this school. This school is approachable by all weather road. In this school academic session starts in April.
+           The school has Government building. It has got 7 classrooms for instructional purposes. All the classrooms are in good condition. It has 2 other rooms for non-teaching activities. The school has a separate room for Head master/Teacher. The school has No Boundary Wall boundary wall. The school has have electric connection. The source of Drinking Water in the school is Well and it is functional. The school has 1 boys toilet and it is functional. and 1 girls toilet and it is functional. The school has a playground. The school has a library and has 1200 books in its library. The school does not need ramp for disabled children to access classrooms.The school has no computers for teaching and learning purposes The school is not having a computer aided learning lab. The school is Provided and Prepared in School Premises providing mid-day meal.</h3>  
+         
+       </div>
+       <div class="section"> 
+       
+       </div>
+       <h1>School Information</h1>
+    
+       <table>
+           <tr>
+               <th>Category</th>
+               <th>Details</th>
+           </tr>
+           <tr>
+               <td>Instruction Medium</td>
+               <td>English</td>
+           </tr>
+        
+           <tr>
+               <td>Pre Primary Section Available</td>
+               <td>No</td>
+           </tr>
+           <tr>
+               <td>Board for Class 10th</td>
+               <td>State Board</td>
+           </tr>
+           <tr>
+               <td>School Type</td>
+               <td>Co-educational</td>
+           </tr>
+           <tr>
+               <td>Classes</td>
+               <td>From Class 6 to Class 12</td>
+           </tr>
+           <tr>
+               <td>Proncipal</td>
+               <td>Urmil Devi</td>
+           </tr>
+           <tr>
+               <td>Pre Primary Teachers</td>
+               <td>0</td>
+           </tr>
+           <tr>
+               <td>Board for Class 10+2</td>
+               <td>State Board(JKBOSE)</td>
+           </tr>
+           <tr>
+               <td>Meal Provided and Prepared in School Premises</td>
+               <td>Yes</td>
+           </tr>
+           <tr>
+               <td>Establishment</td>
+               <td>1953</td>
+           </tr>
+           <tr>
+               <td>School Area</td>
+               <td>Rural</td>
+           </tr>
+           <tr>
+               <td>School Shifted to New Place</td>
+               <td>No</td>
+           </tr>
+           <tr>
+               <td>Head Teachers</td>
+               <td>1</td>
+           </tr>
+           <tr>
+               <td>Head Teacher</td>
+               <td>Roshan Lal</td>
+           </tr>
+           <tr>
+               <td>Is School Residential</td>
+               <td>No</td>
+           </tr>
+           <tr>
+               <td>Residential Type</td>
+               <td>Not Applicable</td>
+           </tr>
+          
+           <tr>
+               <td>Contract Teachers</td>
+               <td>0</td>
+           </tr>
+           <tr>
+               <td>Management</td>
+               <td>Department of Education</td>
+           </tr>
+           <tr><td></td> </tr>
+       </table>
+</body>
+</html>

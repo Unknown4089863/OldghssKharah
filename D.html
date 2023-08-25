@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>School Image Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+          
+           
+            min-height: 100vh;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 20px;
+        }
+
+        .gallery img {
+            width: calc(33.33% - 10px);
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .Back {
+            text-align: left;
+            padding: 20px;
+        }
+
+        .back-button {
+            margin-top: 20px;
+            font-size: 20px;
+        } 
+        
+        
+    </style>
+</head>
+<body>
+     <div class="Back">
+       
+        <button class="back-button" onclick="goBack()">&#8592;</button>
+    </div> 
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+    <div class="gallery">
+        <img src="https://scontent.fixj1-1.fna.fbcdn.net/v/t39.30808-6/366701091_689826243161462_8446382176948297760_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=fwJY4tdXBcAAX8U1ArC&_nc_ht=scontent.fixj1-1.fna&oh=00_AfBoJ19jlWgeoIYpWLPsRZHczOOR2PdoSpWbo98KaBTr_Q&oe=64E29FD7" alt="Image 1">
+        <img src="https://scontent.fixj1-2.fna.fbcdn.net/v/t39.30808-6/299012321_2501901421953897_3575469246448577046_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=yz2uITVKn5EAX90wDpO&_nc_ht=scontent.fixj1-2.fna&oh=00_AfCirxRZHBrHmX2sPT9qzo75TCK2Fr_B_CqcRRPYg47TSw&oe=64E2C65E" alt="Image 2">
+        <img src="https://scontent.fixj1-2.fna.fbcdn.net/v/t39.30808-6/298055979_2501901285287244_8373310933165301120_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=7ODn3m0NmRUAX_gc3i4&_nc_ht=scontent.fixj1-2.fna&oh=00_AfCHFR7L0TbBYclVKBrGpl7rKASEP2BM-t3rbap_pFvoOw&oe=64E3C5BC" alt="Image 3">
+        <img src="https://scontent.fixj1-2.fna.fbcdn.net/v/t39.30808-6/302578602_447677427376346_922390694593845231_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=e3f864&_nc_ohc=abZNtqND8BkAX-JaPf-&_nc_ht=scontent.fixj1-2.fna&oh=00_AfDcDj7tJdxg5eUnpstWX3eJcwSKniri3SNmkZucvPpViQ&oe=64E292C3" alt="Image 4">
+        <img src="https://scontent.fixj1-3.fna.fbcdn.net/v/t39.30808-6/366722344_689826546494765_2938356412504815947_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=7gdjDUvNw68AX8sux0h&_nc_ht=scontent.fixj1-3.fna&oh=00_AfDH-EHN_7db7lWbOi1uVKOIqGb4NAOj37FzIoYwKPUCZA&oe=64E2CE72" alt="Image 5">
+        <img src="https://scontent.fixj1-2.fna.fbcdn.net/v/t39.30808-6/333575637_857349368677324_3623340435350653141_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=u89illMEyZ0AX8v_749&_nc_ht=scontent.fixj1-2.fna&oh=00_AfAZrZb-hEy0NOeMj2kJU44eyXKjMybKCuAETaCzE3kM2A&oe=64E2BDFD" alt="Image 6">
+        <img src="https://scontent.fixj1-2.fna.fbcdn.net/v/t39.30808-6/333589598_599979851562193_1258108117261877969_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=QVQjwzm_l0oAX_vVcJE&_nc_ht=scontent.fixj1-2.fna&oh=00_AfBkyNrFqpo9FUFATgEv8qwz-u7KZam1Q2VAojL6K79Kjg&oe=64E4A4F1" alt="Image 7">
+        <img src="https://scontent.fixj1-2.fna.fbcdn.net/v/t39.30808-6/333575637_857349368677324_3623340435350653141_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=u89illMEyZ0AX-cKsKa&_nc_ht=scontent.fixj1-2.fna&oh=00_AfBIP3Xie0jc4Te1PGxmb2hlZkXcAqIF7t_ABD2-dbUYNw&oe=64E4B83D" alt="Image 8">
+    
+    </div>
+</body>
+</html>

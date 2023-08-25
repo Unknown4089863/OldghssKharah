@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>School Vision Section with Image</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            background-image: url("https://c1.wallpaperflare.com/preview/127/366/443/library-book-bookshelf-read.jpg");
+            
+        }
+
+        .vision-container {
+            display: flex;
+            background-color: #f9f9f9;
+            padding: 30px;
+            text-align: center;
+            margin: 5px;
+        }
+
+        .vision-content {
+            flex: 1;
+            max-width: 800px;
+            margin-right: 30px;
+            text-align: left;
+        }
+
+        .vision-image {
+            flex: 1;
+        }
+
+        .vision-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        .Back {
+            text-align: left;
+            padding: 20px;
+        }
+
+        .back-button {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>GHSS Kharah</h1>
+    </div>
+    <div class="Back">
+       
+        <button class="back-button" onclick="goBack()">&#8592;</button>
+    </div> 
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+    <div class="vision-container">
+        <div class="vision-content">
+            <h2>Our Vision</h2>
+          <p>  To provide good quality modern education-including a strong component of culture, inculcation of values, awareness of the environment, adventure activities and physical education- to the talented children predominantly from the rural areas without regard to their family's socio-economic conditions. 
+        </p>
+        </div>
+        <div class="vision-image">
+            <img src="https://navodaya.gov.in/nvs/system/modules/NVS.WEB/resources/images/about.jpg?__scale=w:300,h:176" alt="Vision Image">
+        </div>
+    </div>
+</body>
+</html>

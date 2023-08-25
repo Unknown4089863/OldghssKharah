@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My School</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0ecec;
+           
+        }
+
+        header {
+            background-color: #6b6d6f;
+            color: #fff;
+            text-align: center;
+            padding: 5px;
+            background-image: url("https://c1.wallpaperflare.com/preview/127/366/443/library-book-bookshelf-read.jpg");
+            
+        }
+
+        nav {
+            background-color: #333;
+            color: #eeeeee;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        .container {
+            max-width: 2000px;
+            margin: auto;
+            padding: 15px;
+        }
+
+        .welcome {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+
+      
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #504d4d;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(8, 0, 0, 0.943);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-item {
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-item:hover {
+            background-color: #413edc;
+        }
+        .slider {
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+            
+        }
+
+        .slide {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 3s ease-in-out;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+        }
+        .footer {
+            background-color: #0e0d0d;
+            color: #fff;
+            padding: 1px 0;
+            text-align: center;
+            
+        }
+
+        .footer-section {
+            margin: 4px 0;
+           
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            display: inline;
+            margin: 0 15px;
+        }
+        .quote-container {
+            width: 80%;
+            max-width: 700px;
+            margin: 50px auto;
+            text-align: center;
+            user-select: none;
+        }
+
+        .quote {
+            font-size: 18px;
+            line-height: 1.2;
+            padding: 20px;
+            background-color: #0e0e0f;
+            border: 2px solid #f9f0f0;
+            color: #fff;
+            border-radius: 15px;
+            transition: transform 0.5s ease;
+        }
+
+        .quote-container:hover .quote {
+            font-size: 15px;
+            transform: scale(1.2);
+        }
+        .content {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            min-height: 100vh; /* Ensure the minimum height of the content area */
+        }
+
+        .notification-bar {
+            position: fixed;
+            top: 30%; /* Initially center it vertically */
+            right: 0;
+            width: 300px;
+            padding: 10px;
+            background-color: #d84444; /* Red color for notification */
+            color: #161515;
+            text-align: center;
+            transform: translateY(-50%); /* Center the bar vertically */
+            transition: transform 0.3s ease-in-out; /* Transition for slide-in effect */
+        }
+
+        .notification-bar.open {
+            transform: translateX(0); /* Slide the bar in from the right */
+        }
+        .close-button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+            font-size: 30px;
+        }
+        .Mode {
+            float: right;
+        }
+        /* Light mode styles */
+        .light-mode {
+            background-color: #ffffff;
+            color: #333333;
+           
+            
+        }
+
+        /* Dark mode styles */
+        .dark-mode {
+            background-color: #111010;
+            color: #fdf7f7;
+           
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            min-height: 100vh; /* Ensure the minimum height of the content area */
+        }
+
+        .slider-container {
+            
+            width: 700px;
+            height: 10px;
+            border: 0px solid #ccc;
+            position: relative;
+
+        }
+
+        .slider-text {
+            white-space: nowrap;
+            position: absolute;
+            animation: slideText 10s linear infinite;
+            
+        }
+
+        @keyframes slideText {
+            0% {
+                left: 100%;
+            }
+            100% {
+                left: -100%;
+            }
+        }
+      
+    </style>
+     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const notificationBar = document.querySelector(".notification-bar");
+            const closeButton = document.querySelector(".close-button");
+
+            closeButton.addEventListener("click", function () {
+                // Remove the notification bar element from the DOM
+                notificationBar.remove();
+            });
+        });
+    </script>
+     <script>
+        // Check the user's preference for light or dark mode
+        const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        // Apply the appropriate mode based on user preference
+        function applyMode() {
+            const body = document.body;
+            body.classList.toggle("dark-mode", prefersDarkMode);
+            body.classList.toggle("light-mode", !prefersDarkMode);
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            applyMode();
+        });
+
+        // Toggle between light and dark modes
+        function toggleMode() {
+            const body = document.body;
+            body.classList.toggle("dark-mode");
+            body.classList.toggle("light-mode");
+        }
+    </script>
+</head>
+<body>
+    <header>
+     
+<h1>Govt Higher Secondary School Kharah</h1>
+    </header>
+    
+    <nav>
+        <a href="A.html">Home</a>
+        
+        <div class="dropdown">
+            <span>About Us</span>
+            <div class="dropdown-content">
+              <a href="B.html" class="dropdown-item">About us</a>
+              <a href="C.html" class="dropdown-item">Vision</a>
+               </div>
+            </div>
+        
+        
+        <a href="D.html">Gallery</a>
+        <div class="dropdown">
+            <span>Result</span>
+            <div class="dropdown-content">
+                <a href="https://jkbose.nic.in/pdf/GazzetteeVol2dt09.06.23.pdf" class="dropdown-item" target="_blank">Class 12th</a>
+                <a href="https://www.jkbose.org.in/wp-content/uploads/2023/07/JKBOSE-11th-Jammu-Division-Result-2023.pdf" class="dropdown-item"  target="_blank" >Class 11th</a>
+                <a href="https://www.jkyouth.com/wp-content/uploads/2023/06/Final_Guz_Volume-1.pdf" class="dropdown-item"  target="_blank">Class 10th</a>
+
+               </div>
+            </div>
+            <a href="m.html">E-Notice</a>
+        
+        <a href="https://www.google.com/maps/place/Higher+secondary+school+kharah/@32.902781,74.5234143,15.76z/data=!4m6!3m5!1s0x391e5ffe2c94a72d:0xe50e6629aed92934!8m2!3d32.9027663!4d74.5230639!16s%2Fg%2F11t6lk7nlt?entry=ttu"  target="_blank">Location</a>
+        <div class="dropdown">
+            <span>Whatsapp</span>
+            <div class="dropdown-content">
+                <a href="https://chat.whatsapp.com/B5VDEbHfENc3XCKk4t1i7L" class="dropdown-item"  target="_blank">Cultural Activity Group</a>
+
+               
+            </div>
+            <a></a>
+            </div>
+            
+                <a href="https://www.facebook.com/p/Govt-Higher-Secondary-School-Kharah-100064022775283/"  target="_blank">  <img src="http://stfrancisakhnoor.org/images/fb.png" alt="Facebook Logo" ></a>
+       
+                <a href="E.html">QUERY</a>
+                
+                <div class="Mode">
+                <button onclick="toggleMode()">Change Mode  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAKpJREFUOE+l0zEOAUEYxfHfXkRE6wJal9Bq3IGIC6jVDqCkEJ1bKBEXISM7yURmM7v2a6aZ93/fe5mp9Jyqp14XwBBnnLCKxl0AB8xq4TZC2gCC8wZrHDHBDeMAKwGC+IpwXjDHDks8S4BUHCPvsUiLb9pgUDuPkssvTHEvAVqLcxE6iX8BncW/gEfddowYWg6Zv203TVriu1RYDpIDZNtus8Ff/6r0EovQD1quIhHsbggjAAAAAElFTkSuQmCC" alt=""></button>
+            </div>
+
+    </nav>
+   <div class="container">
+   <div class="welcome"> Welcome to My School! Providing Quality Education Since 1953.
+
+   </div>
+   </div>
+        <div class="notification-bar">
+            <span class="close-button">&times;</span>
+            <a href="https://www.sdseed.in/docs/Career%20Handbook.pdf" target="_blank">WHAT TO DO AFTER 12TH</a>
+        </div>
+        
+    <div class="slider">
+        <div class="slide"><img src="https://scontent.fixj1-2.fna.fbcdn.net/v/t39.30808-6/302578602_447677427376346_922390694593845231_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=e3f864&_nc_ohc=abZNtqND8BkAX-JaPf-&_nc_ht=scontent.fixj1-2.fna&oh=00_AfDcDj7tJdxg5eUnpstWX3eJcwSKniri3SNmkZucvPpViQ&oe=64E292C3" alt="Image 1"></div>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        const images = ["https://scontent.fixj1-2.fna.fbcdn.net/v/t39.30808-6/302578602_447677427376346_922390694593845231_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=e3f864&_nc_ohc=abZNtqND8BkAX-JaPf-&_nc_ht=scontent.fixj1-2.fna&oh=00_AfDcDj7tJdxg5eUnpstWX3eJcwSKniri3SNmkZucvPpViQ&oe=64E292C3", "https://scontent.fixj1-1.fna.fbcdn.net/v/t39.30808-6/366701091_689826243161462_8446382176948297760_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=fwJY4tdXBcAAX8U1ArC&_nc_ht=scontent.fixj1-1.fna&oh=00_AfBoJ19jlWgeoIYpWLPsRZHczOOR2PdoSpWbo98KaBTr_Q&oe=64E29FD7", "https://scontent.fixj1-2.fna.fbcdn.net/v/t39.30808-6/299012321_2501901421953897_3575469246448577046_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=yz2uITVKn5EAX90wDpO&_nc_ht=scontent.fixj1-2.fna&oh=00_AfCirxRZHBrHmX2sPT9qzo75TCK2Fr_B_CqcRRPYg47TSw&oe=64E2C65E","https://scontent.fixj1-2.fna.fbcdn.net/v/t39.30808-6/333589598_599979851562193_1258108117261877969_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=QVQjwzm_l0oAX_vVcJE&_nc_ht=scontent.fixj1-2.fna&oh=00_AfBkyNrFqpo9FUFATgEv8qwz-u7KZam1Q2VAojL6K79Kjg&oe=64E4A4F1","https://scontent.fixj1-2.fna.fbcdn.net/v/t39.30808-6/333575637_857349368677324_3623340435350653141_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=u89illMEyZ0AX-cKsKa&_nc_ht=scontent.fixj1-2.fna&oh=00_AfBIP3Xie0jc4Te1PGxmb2hlZkXcAqIF7t_ABD2-dbUYNw&oe=64E4B83D"];
+
+        function showSlide(index) {
+            const slider = document.querySelector('.slider');
+            const slide = slider.querySelector('.slide');
+            slide.style.opacity = 0;
+            setTimeout(() => {
+                slide.innerHTML = `<img src="${images[index]}" alt="Image ${index + 1}">`;
+                slide.style.opacity = 1;
+            }, 1000);
+        }
+
+        function autoSlide() {
+            slideIndex++;
+            if (slideIndex >= images.length) {
+                slideIndex = 0;
+            }
+            showSlide(slideIndex);
+        }
+
+        setInterval(autoSlide, 8000); // Change slide every 3 seconds
+
+        showSlide(slideIndex);
+    </script>
+ <div class="container">
+    <div class="welcome"> 
+    <div class="slider-container">
+        <div class="slider-text">
+            Jammu & Kashmir State Board Of School Co-educational
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="quote-container">
+    <div class="quote">
+        ""Education is the most powerful weapon which you can use to change the world."
+        <br>
+        <div class="Mode">- Nelson Mandela</div> 
+    </div>
+</div>
+</br>
+<footer class="footer">
+    <div class="footer-section">
+            <ul class="footer-links">
+                <li>Tehsil: Kharah Balli</li>
+                <li>PinCode : 181203 </li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li><a href="https://www.aicte-jk-scholarship-gov.in/" target="_blank">PMSSS/PM-USP</a></li>
+                <li><a href="https://www.jkbopee.gov.in/" target="_blank">Jkbopee</a></li>
+                
+                <li><a href="https://cuet.samarth.ac.in/" target="_blank">CUET</a></li>
+            </ul>
+        </div>
+
+    
+</footer>
+
+</body>
+</html>
